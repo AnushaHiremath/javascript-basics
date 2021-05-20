@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Guess game</title>
+    </head>
+    <body>
+        <script>
+           var name = prompt('Enter your name')
+           console.log('Welcome to the guess game ' + name)
+
+           //camel case - c styled
+           var targetNumber = Math.round(Math.random() * 100)
+           console.log(targetNumber)
+
+           var maxGuess=10, playerGuessCount = 0
+           
+           //loop
+           //1 - initialization 2 - condition check 3 - incrementation/decrementation
+           
+            while(playerGuessCount < maxGuess){
+                var guess = parseInt(prompt("Guess my number"))  //console.log(typeof guess)
+                if(guess <targetNumber){
+                    console.log('OOPS! your guess was low')
+                }else if(guess>targetNumber){
+                    console.log('OOPS! your guess was high')
+                }else if(guess == targetNumber){
+                    console.log('Good job ' + name + ' you guessed my number')
+                    break
+                }
+
+                //incrementation
+                //playerGuessCount++
+                playerGuessCount = playerGuessCount + 1 //playerGuessCount +=1         
+               }
+
+               if(playerGuessCount == maxGuess){
+                   console.log('Sorry you didn\'t get my number, my number was ' + targetNumber)
+               }
+               //console.log('outside loop')
+        </script>
+    </body>
+</html>
